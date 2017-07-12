@@ -1,0 +1,61 @@
+http://kindeditor.net/down.php
+KindEditor 4.1.10 (2013-11-23) [1143KB]
+kindeditor-4.1.10-zh-CN.zip
+
+remove dir: asp,asp.net,jsp,examples,attached,php(move and change files to current dir)
+remove file: demo.php,kindeditor-all.js,kindeditor-all-min.js,kindeditor-min.js
+create file: /gears/editor/plugins/baidumap/center.html
+
+//文件保存目录路径
+$save_path = $php_path . '../../data/uploads/';
+//文件保存目录URL
+$save_url = '/data/uploads/';
+//定义允许上传的文件扩展名
+$ext_arr = array(
+	'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),
+	'flash' => array('swf', 'flv'),
+	'media' => array('swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'),
+	'file' => array('gif', 'jpg', 'jpeg', 'png', 'bmp', 'swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2', 'pdf'),
+);
+
+uncheck upload file maxsize
+
+append filter pdf
+
+
+//根目录路径，可以指定绝对路径，比如 /var/www/attached/
+$root_path = $php_path . '../../data/uploads/';
+//根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
+$root_url = '/data/uploads/';
+
+
+plugins\insertfile\insertfile.js
+
+if(typeof parent.toast != 'undefined'){
+  parent.toast(self.lang('uploadSuccess'));
+}else{
+  alert(self.lang('uploadSuccess'));
+}
+
+
+kindeditor.js [227] => K.basePath = "/gears/editor/";
+
+kindeditor.js [233] => shadowMode : false,
+
+kindeditor.js [241] => urlType : 'absolute',
+
+kindeditor.js [243] => resizeType : 1,
+
+kindeditor.js [752] => var re = /([ \f\n\r\t\v]*)<(\/)?([\w\-:]+)((?:\s+|(?:\s+[\w\-:]+)|(?:\s+[\w\-:]+=[^\s"'<>]+)|(?:\s+[\w\-:"]+="[^"]*")|(?:\s+[\w\-:"]+='[^']*'))*)(\/)?>([ \f\n\r\t\v]*)/g;
+
+kindeditor.js [257-266] =>
+	items : [
+		'source', 'fontname', 'fontsize',
+		'forecolor', 'hilitecolor',
+		'bold', 'italic', 'underline',
+		'strikethrough', 'lineheight', 'removeformat',
+		'justifyleft', 'justifycenter', 'justifyright',
+		'emoticons', 'image', 'flash',
+		'insertfile', 'link', 'table',
+		'plainpaste', 'wordpaste'
+	],

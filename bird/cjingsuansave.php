@@ -1,0 +1,27 @@
+<?php
+$项目名称=I(md5("项目名称"));
+$物业管理费=I(md5("管理费用标准"),0);
+$管理费用标准=$物业管理费;
+$总建筑面积=I(md5("总建筑面积"),0);
+$总占地面积=I(md5("总占地面积"),0);
+$服务等级=I(md5("服务等级"),"B");
+$level=array(
+  "BM"=>"乙级以下",
+  "B"=>"乙级",
+  "A"=>"甲级",
+  "AA"=>"超甲级",
+);
+$post=array();
+$post["title"]=$项目名称;
+$post["type"]=1;
+$post["post"]=J($_POST);
+$post["jzmj"]=$总建筑面积;
+$post["zdmj"]=$总占地面积;
+$post["glfbz"]=$物业管理费;
+$post["fwdj"]=V($level["$服务等级"],"乙级");
+$post["content"]=I("HTML");
+$post["authenip"]=R("IP");
+$post["authenoperator"]="精算";
+$post["authenstamp"]=time();
+M("chanyeyuan",$post);
+script("GoPage(5);");

@@ -1,0 +1,3 @@
+<?php
+IF(!DEFINED("ROOT"))DIE("DENIED");
+CSS("");

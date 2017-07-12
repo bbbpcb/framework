@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>MAP</title>
+  <style type="text/css">
+  html,body{display:block;overflow:hidden;margin:0;padding:0;width:100%;height:100%;}
+  #MAP{display:block;overflow:hidden;width:100%;height:100%;}
+  </style>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6b6c1a67eaa7db1ca6d6da28e590e343"></script>
+</head>
+<body>
+  <div id="MAP"></div><script type="text/javascript">function Query(name){return location.href.match(new RegExp('[?#&]'+name+'=([^?#&]+)','i'))?RegExp.$1:''}(function(){var map=new BMap.Map("MAP");var center=Query('center').split(',');var point=new BMap.Point(center[0],center[1]);var zoom=Query("zoom");map.centerAndZoom(point,zoom?zoom:15);var marker=new BMap.Marker(point);marker.enableDragging();map.addOverlay(marker);map.addControl(new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE}));map.addControl(new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1}));})();</script>
+</body>
+</html>

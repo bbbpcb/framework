@@ -1,0 +1,24 @@
+<?php
+$物业管理费=I(md5("物业管理费"),0);
+$总建筑面积=I(md5("总建面积"),0);
+$服务等级=I(md5("服务等级"),"B");
+$level=array(
+  "BM"=>"乙级以下",
+  "B"=>"乙级",
+  "A"=>"甲级",
+  "AA"=>"超甲级",
+);
+$post=array();
+$post["title"]="粗算".T(time(),"mdHis");
+$post["type"]=0;
+$post["post"]=J($_POST);
+$post["jzmj"]=$总建筑面积;
+$post["zdmj"]="-";
+$post["glfbz"]=$物业管理费;
+$post["fwdj"]=V($level["$服务等级"],"乙级");
+$post["content"]=I("HTML");
+$post["authenip"]=R("IP");
+$post["authenoperator"]="粗算";
+$post["authenstamp"]=time();
+M("xiezilou",$post);
+script("GoPage(5);");

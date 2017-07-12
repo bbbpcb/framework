@@ -1,0 +1,1 @@
+<?php if(!defined('ROOT'))DIE('DENIED');define('DATABASE','mysql://root:root@localhost/gemdale');
